@@ -11,6 +11,11 @@ Este é o meu setup pessoal. Se você quer deixar o seu sistema com a minha cara
 1. Abra o terminal.
 2. Digite:
    git clone https://github.com/tc34b-jpg/Dotsfiles-my.git
+   
    cd Dotsfiles-my/dotfiles
+   
    chmod +x install.sh
+
    ./install.sh
+   
+   chmod +x ~/atualizar-setup.sh
