@@ -10,7 +10,7 @@ mkdir -p ~/.config
 
 # Copiando as configurações
 echo "📂 Copiando arquivos para ~/.config/..."
-cp -r fish/ hypr/ rofi/ waybar/ wlogout/ ~/.config/
+cp -r fish/* hypr/* rofi/* waybar/* wlogout/* ~/.config/
 cp starship.toml ~/.config/
 
 echo "✅ Pronto! Agora é só deslogar e entrar no Hyprland."
