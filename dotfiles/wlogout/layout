@@ -29,8 +29,8 @@
     "keybind": "escape"
 }
 {
-    "label": "cancel-waybar",
-    "action": "killall waybar && waybar &",
-    "text": "Resetar waybar",
+    "label": "Atualizar",
+    "action": "~/atualiza-setup.sh",
+    "text": "Atualizar!!!",
     "keybind": "w"
 }
