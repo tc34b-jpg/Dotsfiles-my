@@ -7,7 +7,7 @@ Este é o meu setup pessoal. Se você quer deixar o seu sistema com a minha cara
 - **Shell:** Fish, Starship (prompt)
 - **Fontes:** JetBrainsMono Nerd Font
 
-## 🚀 Como instalar (Para o meu Pai ❤️)
+## 🚀 Como instalar
 1. Abra o terminal.
 2. digite:
 ```
