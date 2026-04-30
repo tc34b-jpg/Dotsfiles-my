@@ -32,5 +32,5 @@ button:focus, button:active, button:hover {
 #shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }
 #reboot { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }
 #cancel { background-image: image(url("/usr/share/wlogout/icons/suspend.png"));}
-#cancel-waybar { background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));}
+#Atualizar { background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));}
 
