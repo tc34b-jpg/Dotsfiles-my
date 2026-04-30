@@ -1,0 +1,40 @@
+format = """
+[┌ 󰣇 ](blue) $directory$git_branch$git_status
+[⊦](blue) $cmd_duration
+[└](blue)$character
+"""
+add_newline = true
+
+# --------------------------
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+# --------------------------
+
+# --------------------------
+[directory]
+truncation_length = 3
+style = "bold aqua"
+# --------------------------
+
+# --------------------------
+[cmd_duration]
+min_time = 1
+format = "levou [$duration]($style) "
+style = "bold red"
+# --------------------------
+
+# --------------------------
+[git_branch]
+symbol = " "
+style = "bold purple"
+# --------------------------
+
+# --------------------------
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${count}⇣${count}"
+modified = "📝"
+stashed = "📦"
+# --------------------------

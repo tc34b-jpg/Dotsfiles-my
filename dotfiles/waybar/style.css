@@ -1,0 +1,89 @@
+
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Roboto", "sans-serif";
+    font-size: 13px;
+}
+
+window#waybar {
+    background: rgba(17, 17, 27, 0.9);
+    color: #666666;
+    border-bottom: 2px solid #6e2abf; /* Linha dourada do Dante */
+}
+
+/* Estilo dos Cantos (Arch + Limbus) */
+#custom-arch {
+    color: #ffffff;
+    background-color: #4a1868;
+    margin: 5px 0 5px 5px;
+    padding: 0 12px;
+    border-radius: 12px 0 0 12px;
+}
+
+#custom-limbus {
+    color: #ffffff; 
+    background-color: #4a1868;
+    margin: 5px 5px 5px 0;
+    padding: 0 12px;
+    border-radius: 0 12px 12px 0;
+    border-left: 1px solid rgba(250, 179, 135, 0.4);
+}
+
+/* Workspaces */
+#workspaces {
+    background: #1e1e2e;
+    margin: 5px 2px;
+    border-radius: 12px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #cba6f7;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background: #313244;
+    border-radius: 10px;
+}
+
+/* Relógio Centralizado */
+#clock {
+    color: #0F0916;
+    background-color: #D1B3FF;
+    padding: 0 15px;
+    margin: 5px 0;
+    border-radius: 15px;
+    border: 1px solid rgba(250, 179, 135, 0.2);
+}
+
+/* Módulos da Direita (Pílulas Individuais) */
+#pulseaudio, #network, #cpu, #memory, #battery {
+    padding: 0 12px;
+    margin: 5px 2px;
+    border-radius: 12px;
+    background-color: #d9d9d9;
+}
+
+#pulseaudio { color: #7b12b7; }
+#network { color: #7b12b7; }
+#cpu { color: #7b12b7; } /* Cor de combate */
+#memory { color: #7b12b7; } /* Cor do Enkephalin */
+#battery { color: #7b12b7; }
+
+#battery.critical {
+    background-color: #f38ba8;
+    color: #11111b;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to { background-color: #1e1e2e; color: #f38ba8; }
+}
+

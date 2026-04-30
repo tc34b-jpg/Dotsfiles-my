@@ -1,0 +1,73 @@
+configuration {
+    modi: "combi";
+    combi-modi: "drun,run,window";
+    show-icons: false;
+    display-combi: " 󰣇  [tc34b@arch]: "; 
+}
+
+* {
+    /* Paleta K Corp / Arch Blue */
+    bg: #0a0a0a;           /* Fundo preto total */
+    bg-alt: #11111b;       /* Fundo levemente cinza pros itens */
+    fg: #cdd6f4;           /* Texto principal (cinza claro) */
+    accent: #89b4fa;       /* AZUL ARCH (Substituindo o rosa) */
+    selection-fg: #0a0a0a; /* Texto quando selecionado */
+    
+    font: "JetBrainsMono Nerd Font 11";
+    background-color: transparent;
+}
+
+window {
+    width: 600px;
+    border: 2px;
+    border-color: @accent; /* Borda agora é AZUL */
+    background-color: @bg;
+    border-radius: 8px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @bg-alt;
+    padding: 12px;
+    children: [ prompt, entry ];
+    border: 0 0 2px 0;
+    border-color: @accent;
+}
+
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    text-color: @fg;
+    placeholder: " Digite uma ordem, Sudoer...";
+    placeholder-color: #45475a;
+}
+
+listview {
+    lines: 10;
+    padding: 10px;
+}
+
+/* AQUI ESTÁ O AJUSTE DOS ITENS CLAROS */
+element {
+    padding: 8px;
+    margin: 2px 0;
+    background-color: @bg; /* Força o fundo a ser escuro */
+    text-color: @fg;
+    border-radius: 4px;
+}
+
+/* O QUE VOCÊ ESTÁ SELECIONANDO AGORA */
+element selected {
+    background-color: @accent; /* Fundo Azul */
+    text-color: @selection-fg;  /* Texto Preto pra dar contraste */
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}

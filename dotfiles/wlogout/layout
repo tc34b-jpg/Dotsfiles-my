@@ -1,0 +1,36 @@
+{
+    "label": "lock",
+    "action": "swaylock",
+    "text": "Bloquear",
+    "keybind": "l"
+}
+{
+    "label": "logout",
+    "action": "hyprctl dispatch exit",
+    "text": "Sair",
+    "keybind": "e"
+}
+{
+    "label": "shutdown",
+    "action": "systemctl poweroff",
+    "text": "Desligar",
+    "keybind": "s"
+}
+{
+    "label": "reboot",
+    "action": "systemctl reboot",
+    "text": "Reiniciar",
+    "keybind": "r"
+}
+{
+    "label": "cancel",
+    "action": "killall wlogout",
+    "text": "Voltar",
+    "keybind": "escape"
+}
+{
+    "label": "cancel-waybar",
+    "action": "killall waybar && waybar &",
+    "text": "Resetar waybar",
+    "keybind": "w"
+}
