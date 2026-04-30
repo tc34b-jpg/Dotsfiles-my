@@ -6,7 +6,16 @@ Este é o meu setup pessoal. Se você quer deixar o seu sistema com a minha cara
 - **Interface:** Hyprland, Waybar, Rofi, Wlogout
 - **Shell:** Fish, Starship (prompt)
 - **Fontes:** JetBrainsMono Nerd Font
+- **AUR Helper** Yay
+```
+sudo pacman -Syu --needed git base-devel
 
+git clone https://aur.archlinux.org/yay.git
+
+cd yay
+
+makepkg -si
+```
 ## 🚀 Como instalar
 1. Abra o terminal.
 2. digite:
