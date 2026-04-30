@@ -17,5 +17,4 @@ Este é o meu setup pessoal. Se você quer deixar o seu sistema com a minha cara
    chmod +x install.sh
 
    ./install.sh
-   
-   chmod +x ~/atualizar-setup.sh
+  
