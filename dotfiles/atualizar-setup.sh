@@ -4,7 +4,6 @@
 notify-send "⏳ Atualizando o Setup..." "Buscando novidades do GitHub do Tc..."
 
 # 2. Entra na pasta onde ele baixou o seu repositório
-# (Ajuste esse caminho se ele tiver clonado em outro lugar)
 cd ~/Dotsfiles-my/dotfiles
 
 # 3. Puxa as atualizações mais recentes da branch main
@@ -18,3 +17,4 @@ cp starship.toml ~/.config/
 notify-send "✅ Setup Atualizado!" "Tudo no esquema. Recarregando a interface..."
 hyprctl reload
 killall waybar && waybar &
+sudo pacman -Sc
