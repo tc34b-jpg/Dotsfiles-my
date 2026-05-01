@@ -1,9 +1,11 @@
 #!/bin/bash
 
 echo "🚀 Iniciando a instalação do setup do Tc34b..."
-
+# Atualizando os pacotes
+sudo pacman -Syu
+yay -Syu
 # Instalando o essencial no Arch-basead
-sudo pacman -Syu --noconfirm hyprland waybar rofi fish starship ttf-jetbrains-mono-nerd
+sudo pacman -S --noconfirm hyprland waybar rofi fish starship ttf-jetbrains-mono-nerd
 yay -S wlogout --noconfirm
 
 # Criando as pastas na .config
