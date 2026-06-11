@@ -1,0 +1,228 @@
+/* ============================================================
+   Waybar — Tema Neon Cyberpunk TC34b
+   Hyprland + Waybar
+   ============================================================ */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+/* ── Barra principal ───────────────────────────────────────── */
+window#waybar {
+    background-color: rgba(3, 8, 20, 0.92);
+    color: #c0d2f6;
+    border-bottom: 2px solid #1a5fa8;
+    box-shadow: 0 2px 18px 0 rgba(30, 100, 220, 0.18);
+}
+
+/* ── Tooltip ───────────────────────────────────────────────── */
+tooltip {
+    background-color: rgba(3, 8, 20, 0.97);
+    border: 1px solid #1e64dc;
+    border-radius: 10px;
+    color: #c0d2f6;
+    padding: 8px 14px;
+}
+tooltip label { color: #c0d2f6; }
+
+/* ══════════════════════════════════════════════════════════
+   LEFT
+   ══════════════════════════════════════════════════════════ */
+
+/* Arch */
+#custom-arch {
+    color: #47cce7;
+    font-size: 20px;
+    padding: 0 14px;
+    margin: 3px 0;
+    border-right: 2px solid rgba(71, 204, 231, 0.3);
+    text-shadow: 0 0 10px rgba(71, 204, 231, 0.7),
+                 0 0 22px rgba(71, 204, 231, 0.4);
+}
+#custom-arch:hover {
+    color: #ffffff;
+    text-shadow: 0 0 14px #47cce7, 0 0 30px #47cce7;
+}
+
+/* Workspaces */
+#hyprland-workspaces {
+    padding: 0 8px;
+}
+#hyprland-workspaces button {
+    padding: 2px 12px;
+    margin: 5px 3px;
+    color: #3a5a7a;
+    background-color: rgba(20, 40, 70, 0.5);
+    border-radius: 20px;
+    border: 1px solid rgba(55, 138, 221, 0.15);
+    transition: all 0.18s ease;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+#hyprland-workspaces button:hover {
+    color: #85b7eb;
+    background-color: rgba(55, 138, 221, 0.18);
+    border-color: rgba(55, 138, 221, 0.45);
+}
+/* Workspace ativa — pill azul neon */
+#workspaces button.active {
+    color: #0a0c12;
+    background: #00f0ff;
+}
+
+#hyprland-workspaces button.urgent {
+    color: #ffffff;
+    background: linear-gradient(135deg, #8b1a1a 0%, #5a0d0d 100%);
+    border-color: #e24b4a;
+    box-shadow: 0 0 8px rgba(226, 75, 74, 0.7),
+                0 0 18px rgba(226, 75, 74, 0.3);
+    animation: urgent-pulse 1s ease-in-out infinite alternate;
+}
+@keyframes urgent-pulse {
+    from { box-shadow: 0 0 6px rgba(226,75,74,0.6); }
+    to   { box-shadow: 0 0 16px rgba(226,75,74,0.95), 0 0 30px rgba(226,75,74,0.4); }
+}
+
+/* Limbus */
+#custom-limbus {
+    color: #47cce7;
+    margin: 4px 6px;
+    padding: 0 14px;
+    background-color: rgba(71, 204, 231, 0.08);
+    border-radius: 20px;
+    border: 1px solid rgba(71, 204, 231, 0.35);
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(71, 204, 231, 0.5);
+}
+#custom-limbus:hover {
+    color: #ffffff;
+    background-color: rgba(71, 204, 231, 0.18);
+    border-color: #47cce7;
+    box-shadow: 0 0 10px rgba(71, 204, 231, 0.4),
+                0 0 22px rgba(71, 204, 231, 0.2);
+    text-shadow: 0 0 12px #47cce7;
+}
+
+/* Título da janela */
+#hyprland-window {
+    color: #3a5a7a;
+    padding: 0 10px;
+    font-style: italic;
+}
+
+/* ══════════════════════════════════════════════════════════
+   CENTER
+   ══════════════════════════════════════════════════════════ */
+
+#bluetooth {
+    color: #47cce7;
+    padding: 0 10px;
+    font-size: 15px;
+}
+#bluetooth.connected {
+    text-shadow: 0 0 8px rgba(71, 204, 231, 0.6);
+}
+#bluetooth.off,
+#bluetooth.disabled {
+    color: #1e3a5a;
+}
+
+#clock {
+    color: #c0d2f6;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 0 14px;
+    text-shadow: 0 0 8px rgba(192, 210, 246, 0.35);
+}
+
+#network {
+    color: #47cce7;
+    padding: 0 10px;
+    font-size: 15px;
+    text-shadow: 0 0 6px rgba(71, 204, 231, 0.4);
+}
+#network.disconnected {
+    color: #e24b4a;
+    text-shadow: 0 0 8px rgba(226, 75, 74, 0.6);
+}
+
+/* ══════════════════════════════════════════════════════════
+   RIGHT
+   ══════════════════════════════════════════════════════════ */
+
+#pulseaudio {
+    color: #85b7eb;
+    padding: 0 10px;
+}
+#pulseaudio.muted {
+    color: #1e3a5a;
+    text-shadow: none;
+}
+#pulseaudio:hover {
+    color: #c0d2f6;
+    text-shadow: 0 0 8px rgba(192, 210, 246, 0.5);
+}
+
+#memory {
+    color: #7099cc;
+    padding: 0 10px;
+}
+
+/* Bateria */
+#battery {
+    color: #85b7eb;
+    padding: 0 10px;
+}
+#battery.good {
+    color: #5dcaa5;
+    text-shadow: 0 0 6px rgba(93, 202, 165, 0.5);
+}
+#battery.warning {
+    color: #ef9f27;
+    text-shadow: 0 0 8px rgba(239, 159, 39, 0.6);
+}
+#battery.critical {
+    color: #e24b4a;
+    text-shadow: 0 0 10px rgba(226, 75, 74, 0.8);
+    animation: battery-blink 0.9s steps(1) infinite;
+}
+#battery.charging,
+#battery.plugged {
+    color: #5dcaa5;
+    text-shadow: 0 0 8px rgba(93, 202, 165, 0.6);
+}
+@keyframes battery-blink {
+    0%   { color: #e24b4a; text-shadow: 0 0 10px rgba(226,75,74,0.9); }
+    50%  { color: #3a0d0d; text-shadow: none; }
+    100% { color: #e24b4a; text-shadow: 0 0 10px rgba(226,75,74,0.9); }
+}
+
+/* Tray */
+#tray {
+    padding: 0 8px;
+    border-left: 1px solid rgba(55, 138, 221, 0.2);
+}
+#tray > .passive   { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
+
+/* Power */
+#custom-power {
+    color: #3a5a7a;
+    font-size: 18px;
+    padding: 0 14px;
+    margin: 3px 0;
+    border-left: 2px solid rgba(55, 138, 221, 0.2);
+    transition: all 0.18s ease;
+}
+#custom-power:hover {
+    color: #e24b4a;
+    text-shadow: 0 0 12px rgba(226, 75, 74, 0.8),
+                 0 0 26px rgba(226, 75, 74, 0.4);
+    border-left-color: rgba(226, 75, 74, 0.4);
+}

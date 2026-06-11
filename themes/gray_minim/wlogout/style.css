@@ -1,0 +1,36 @@
+
+
+/* Fundo da tela inteira */
+window {
+    background-color: rgba(10, 10, 10, 0.85); /* Preto transparente (Dante style) */
+}
+
+/* Estilo geral dos botões */
+button {
+    background-color: #1e1e2e;
+    color: #ffffff; /* Texto Branco */
+    border: 3px solid #cba6f7; /* Borda ROXA */
+    border-radius: 20px;
+    margin: 15px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+}
+
+/* Quando você passa o mouse ou seleciona */
+button:focus, button:active, button:hover {
+    background-color: #cba6f7; /* Fundo fica Roxo */
+    color: #0a0a0a;            /* Texto fica Preto pra destacar */
+    border: 3px solid #ffffff; /* Borda muda pra Branco */
+}
+
+/* Ajustando os ícones (wlogout usa imagens por padrão) */
+#lock { background-image: image(url("/usr/share/wlogout/icons/lock.png")); }
+#logout { background-image: image(url("/usr/share/wlogout/icons/logout.png")); }
+#shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }
+#reboot { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }
+#cancel { background-image: image(url("/usr/share/wlogout/icons/suspend.png"));}
+#cancel-waybar { background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));}
+

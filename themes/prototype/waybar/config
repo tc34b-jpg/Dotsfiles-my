@@ -1,0 +1,125 @@
+{
+    // General settings
+    "layer": "bottom", // Defines whether the bar will overlap windows or not
+    "spacing": 0,      // Defines spaces between modules
+    "height": 40,
+    "position": "top",
+    "margin-top": 0,   // Defines whether the bar will float
+    "margin-right": 0,
+    "margin-left": 0,
+
+
+    // modulos
+    "modules-left": ["custom/arch", "hyprland/workspaces", "custom/limbus", "custom/tlauncher", "hyprland/window"],
+    "modules-center": ["bluetooth", "clock", "network"],
+    "modules-right": ["pulseaudio", "memory", "battery", "tray", "custom/power"],
+
+
+    // --------------------------------- Left modules ---------------------------------
+
+    "custom/arch": {
+        "format": "   ",
+        "tooltip-format": "TC34b'S COMPUTER",
+        "on-click": "~/.config/waybar/flatpak-launcher.sh"
+    },
+
+    "custom/limbus": {
+        "format": " TC34BROOT ",
+        "tooltip-format": "Face the Fear, Build the Future",
+        "on-click": "rofi -combi-modi drun,run,window -show combi"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate"
+    },
+
+    // -------------------------------- Center modules --------------------------------
+
+    "clock": {
+        "format": "✦ {:%H:%M} ✦",                                           // 24-hour clock
+        "format-alt": "✦ {:%A, %B %d} ✦",                                   // Day of the week
+        "on-click-right": "play -q ~/.local/share/sounds/present-time.mp3", // Command to execute when right-clicking
+        "tooltip-format": "{calendar}",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#ffffff'><b><i>{}</i></b></span>", // Month format
+                "days": "<span color='#c0d2f6'>{}</span>",                 // Day format
+                "weekdays": "<span color='#47cce7'><b>{}</b></span>",      // Weekday format
+                "today": "<span color='#47cce7'><b>{}</b></span>"          // Today format
+            }
+        },
+        "actions": {
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂯ㅤConnected",
+        "tooltip-format": "󰂯  Status: {status}\n  Alias: {controller_alias}\n  Address: {controller_address}",
+        "tooltip-format-connected": "󰂯  Status: {status}\n  Alias: {controller_alias}\n  Address: {controller_address}\n󰾰  Devices: {device_enumerate}",
+        "tooltip-format-enumerate-connected": "󰂯  Status: {status}\n  Device: {device_alias} | {device_address}",
+        "on-click": "[[ $(bluetoothctl show | awk -F': ' '/PowerState/ {print $2}') == 'off' ]] && bluetoothctl power on &>/dev/null || bluetoothctl power off &>/dev/null"
+    },
+
+   // -------------------------------- Right modules ---------------------------------
+
+    "cpu": {
+        "format": "<span> </span>{usage}%"
+    },
+
+    "memory": {
+        "format": "<span></span> {used}G/{total:0.1f}G <span>󰓡</span> {swapUsed:0.1f}G",
+        "tooltip": true,
+        "tooltip-format": "RAM: {used}GiB / {total}GiB ({percentage}%)\nSwap: {swapUsed}GiB / {swapTotal}GiB ({swapPercentage}%)"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-full": "󱈑",
+        "format-plugged": "󰂄",
+        "format-charging": "󰂄",
+        "format-icons": ["󱟩", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󱈑"], // Battery states icons
+        "tooltip-format": "󱐋  <b><i>Capacity</i>:</b> <span color='#c0d2f6'>{capacity}%</span>\n  <b><i>Time</i>:</b> <span color='#c0d2f6'>{time}</span>",
+        "tooltip-format-plugged": "󱐋  <b><i>Capacity</i>:</b> <span color='#c0d2f6'>{capacity}%</span> (<span color='#00e636'></span>)\n  <b><i>Time</i>:</b> <span color='#c0d2f6'>Fully charged!</span>",
+        "tooltip-format-charging": "󱐋  <b><i>Capacity</i>:</b> <span color='#c0d2f6'>{capacity}%</span> (<span color='#ffe600'>󱐋</span>)\n  <b><i>Time to 100%</i>:</b> <span color='#c0d2f6'>{time}</span>",
+        "states": { // Defining battery states
+            "good": 100,
+            "warning": 50,
+            "critical": 20
+        }
+    },
+
+    "network": {
+        "format-ethernet": "󰈀",
+        "format-wifi": "{icon}",
+        "tooltip": true,
+        "format-icons": ["󰤟", "󰤢", "󰤥"], // Wifi strength icons
+        "tooltip-format": "  <b><i>Network</i>:</b> <span color='#c0d2f6'>{essid}</span>\n󰈀  <b><i>Interface</i>:</b> <span color='#c0d2f6'>{ifname}</span>\n  <b><i>Download</i>:</b> <span color='#c0d2f6'>{bandwidthDownBytes}</span>\n  <b><i>Upload</i>:</b> <span color='#c0d2f6'>{bandwidthUpBytes}</span>\n󰩟  <b><i>IP</i>:</b> <span color='#c0d2f6'>{ipaddr}</span>",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-disconnected": "<span>⚠ </span>OFF",
+        "interval": 10
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-bluetooth": "󰥰",
+        "format-icons": ["", "", ""], // Volume levels icons
+        "tooltip-format": "{icon}  <b><i>Volume</i>:</b> <span color='#c0d2f6'>{volume}%</span>",
+        "on-click": "pavucontrol",       // Audio manager tool
+        "max-volume": 100,               // Maximum volume in percentage
+        "scroll-step": 5               // Scroll speed when changing volume
+    },
+    
+    "custom/power": {
+        "format": " 󱗗 ",
+        "tooltip": false,
+        "on-click": "wlogout -s ~/.config/wlogout/style.css"
+    }
+}
