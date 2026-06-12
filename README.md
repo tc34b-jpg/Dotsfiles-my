@@ -21,10 +21,9 @@ makepkg -si
 2. digite:
 ```
     git clone https://github.com/tc34b-jpg/Dotsfiles-my.git
-   
-   cd Dotsfiles-my/dotfiles
-   
-   chmod +x install.sh
 
-   ./install.sh
+   cd dotsfiles-my
+
+   cp -Rv dotsfiles-my/themes ~/.config/
+   
 ```
