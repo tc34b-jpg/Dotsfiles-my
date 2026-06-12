@@ -20,10 +20,10 @@ makepkg -si
 1. Abra o terminal.
 2. digite:
 ```
-    git clone https://github.com/tc34b-jpg/Dotsfiles-my.git
+git clone https://github.com/tc34b-jpg/Dotsfiles-my.git
 
-   cd dotsfiles-my
+    cd ~/dotsfiles-my
 
-   cp -Rv dotsfiles-my/themes ~/.config/
+    cp -Rv ~/Dotsfiles-my/themes/ ~/.config/
    
 ```
