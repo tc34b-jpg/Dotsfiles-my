@@ -1,0 +1,98 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "monospace";
+    font-size: 15px;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+/* ── Canto esquerdo (Arch) ── */
+#custom-arch {
+    color: #000000;
+    background-color: #ff0000;
+    margin: 5px 0 5px 5px;
+    padding: 0 15px;
+}
+
+/* ── Launcher ── */
+#custom-tlauncher {
+    color: #ff0000;
+    background-color: #0a0000;
+    padding: 0 15px;
+    margin: 5px 3px;
+    border-bottom: 2px solid #ff0000;
+}
+
+#custom-tlauncher:hover {
+    background-color: #ff0000;
+    color: #000000;
+}
+
+/* ── Canto direito ── */
+#custom-limbus {
+    color: #000000;
+    background-color: #ff0000;
+    margin: 5px 5px 5px 0;
+    padding: 0 15px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ── Workspaces ── */
+#workspaces {
+    background: #0a0000;
+    margin: 5px 4px;
+    border: 1px solid #ff0000;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: #ff0000;
+}
+
+#workspaces button.active {
+    color: #000000;
+    background: #ff0000;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 0, 0, 0.3);
+    color: #ffffff;
+}
+
+/* ── Relógio central ── */
+#clock {
+    color: #ffffff;
+    background-color: #0a0000;
+    padding: 0 20px;
+    margin: 5px 0;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+}
+
+/* ── Módulos da direita ── */
+#pulseaudio, #network, #cpu, #memory, #battery, #bluetooth {
+    padding: 0 12px;
+    margin: 5px 3px;
+    background-color: #0a0000;
+    border-bottom: 2px solid #ff0000;
+}
+
+#pulseaudio { color: #ffffff; }
+#network    { color: #ff0000; }
+#cpu        { color: #cc0000; }
+#memory     { color: #8b0000; }
+#battery    { color: #dddddd; }
+#bluetooth  { color: #ff0000; }
+
+#battery.critical {
+    background-color: #ff0000;
+    color: #000000;
+}
+
+@keyframes blink {
+    to { background-color: #1a0000; color: #ff0000; }
+}

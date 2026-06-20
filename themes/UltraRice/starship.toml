@@ -1,0 +1,30 @@
+format = """
+[┌ 󰣇 ](red) $cmd_duration$git_branch$git_status
+[└ ](red)$directory
+[.⮡](red)$character
+"""
+add_newline = true
+
+[character]
+success_symbol = "[➜](bold red)"
+error_symbol = "[✗](bold bright-red)"
+
+[directory]
+truncation_length = 3
+style = "bold white"
+
+[cmd_duration]
+min_time = 1
+format = "Took [$duration]($style) "
+style = "bold red"
+
+[git_branch]
+symbol = " "
+style = "bold red"
+
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${count}⇣${count}"
+modified = "📝"
+stashed = "📦"

@@ -1,0 +1,29 @@
+window {
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+button {
+    background-color: #0a0000;
+    color: #ffffff;
+    border: 3px solid #ff0000;
+    border-radius: 0px;
+    margin: 15px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+}
+
+button:focus, button:active, button:hover {
+    background-color: #ff0000;
+    color: #000000;
+    border: 3px solid #ffffff;
+}
+
+#lock     { background-image: image(url("/usr/share/wlogout/icons/lock.png")); }
+#logout   { background-image: image(url("/usr/share/wlogout/icons/logout.png")); }
+#shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }
+#reboot   { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }
+#cancel   { background-image: image(url("/usr/share/wlogout/icons/suspend.png")); }
+#cancel-waybar { background-image: image(url("/usr/share/wlogout/icons/hibernate.png")); }

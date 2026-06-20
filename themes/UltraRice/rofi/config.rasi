@@ -1,0 +1,72 @@
+configuration {
+    modi: "combi";
+    combi-modi: "drun,run,window";
+    show-icons: false;
+    display-combi: " 󰣇  [tc34b@arch]: ";
+}
+
+/* Paleta Ultrarice — vermelho neon sobre preto absoluto */
+* {
+    bg:           #000000;
+    bg-alt:       #0a0000;
+    fg:           #ffffff;
+    accent:       #ff0000;
+    accent-dim:   #8b0000;
+    selection-fg: #000000;
+
+    font: "JetBrainsMono Nerd Font 11";
+    background-color: transparent;
+}
+
+window {
+    width: 600px;
+    border: 2px;
+    border-color: @accent;
+    background-color: @bg;
+    border-radius: 0;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @bg-alt;
+    padding: 12px;
+    children: [ prompt, entry ];
+    border: 0 0 2px 0;
+    border-color: @accent;
+}
+
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    text-color: @fg;
+    placeholder: " WHAT IS YOUR WEAPON?";
+    placeholder-color: @accent-dim;
+}
+
+listview {
+    lines: 10;
+    padding: 10px;
+}
+
+element {
+    padding: 8px;
+    margin: 2px 0;
+    background-color: @bg;
+    text-color: @fg;
+    border-radius: 0;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @selection-fg;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
