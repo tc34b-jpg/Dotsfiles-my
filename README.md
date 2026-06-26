@@ -19,7 +19,7 @@
 ```bash
 sudo pacman -S hyprland waybar rofi-wayland kitty fish starship \
                fastfetch hyprpaper hyprlock wlogout mako playerctl \
-               ttf-jetbrains-mono-nerd
+               ttf-jetbrains-mono-nerd libnotify
 ```
 
 ---
@@ -28,6 +28,7 @@ sudo pacman -S hyprland waybar rofi-wayland kitty fish starship \
 
 ```
 ~/.config/themes/
+├── install.sh
 ├── switch-theme.sh
 ├── current
 ├── gray_minim/
@@ -53,39 +54,39 @@ sudo pacman -S hyprland waybar rofi-wayland kitty fish starship \
 
 ## 🚀 Installation
 
-1. Clone the repository:
 ```bash
 git clone https://github.com/tc34b-jpg/Dotsfiles-my.git
+cd Dotsfiles-my
+./install.sh
 ```
 
-2. Copy the themes folder to your config:
-```bash
-cp -r Dotsfiles-my/themes ~/.config/
-```
+The script will:
+- Install all dependencies via pacman
+- Copy themes to `~/.config/themes/`
+- Fix all paths automatically for your user
+- Make the switcher executable
 
-3. Make the switcher executable:
-```bash
-chmod +x ~/.config/themes/switch-theme.sh
-```
+---
 
-4. Edit `hyprpaper.conf` inside each theme's `hypr/` folder and update the paths to match your username:
-```ini
-# Change /home/tc34b/ to /home/YOUR_USERNAME/
-preload = /home/YOUR_USERNAME/.config/themes/UltraRice/hypr/wallpaper-hdmi.png
-```
+## ⚙️ After installation
 
-5. Add a keybind in your `hyprland.conf`:
+1. Add to your `hyprland.conf`:
 ```ini
 bind = $mainMod, T, exec, ~/.config/themes/switch-theme.sh
 ```
 
-6. Or add it to your Waybar config:
+2. Or add to your Waybar config:
 ```json
 "custom/theme": {
     "format": "󰏘",
     "on-click": "~/.config/themes/switch-theme.sh",
     "tooltip-format": "Switch theme"
 }
+```
+
+3. Add to your `~/.config/fish/config.fish`:
+```fish
+starship init fish | source
 ```
 
 ---
@@ -106,7 +107,7 @@ When you select a theme, the script automatically:
 
 - **Monitors:** configs assume `HDMI-A-1` as external monitor and `eDP-1` as laptop screen. Adjust in `hyprpaper.conf` if needed.
 - **Font:** JetBrainsMono Nerd Font is required for icons to display correctly.
-- **Fish shell:** `starship init fish | source` must be in your `~/.config/fish/config.fish`.
+- **AUR:** `wlogout` may require an AUR helper like `yay` or `paru`.
 
 ---
 
